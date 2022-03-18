@@ -8,47 +8,8 @@ var text = document.createElement("p");
 
 const memeList = [];
 const quotesList = [];
-var memeListLength, quoteListLength, randomMeme, randomQuote, textNode, quotesObject;
+var memeListLength, randomMeme, randomQuote, textNode, quotesObject;
 
-<<<<<<< HEAD
-//fetch Quotes
-
-async function fetchQuoteList() {
-  // Fetch a random quote from the API
-  const response = await fetch("http://api.quotable.io/quotes?tags=inspirational&limit=75");
-  const data = await response.json();
-  if (response.ok) {
-    // Update array
-    quotesList.push(data);
-    quoteListLength = quotesList[0].results.length + 1;
-  } else {
-    quote.textContent = "An error occured";
-    console.log(data);
-  }
-}
-
-//fetch Memes
-
-async function fetchMemeList() {
-  // Fetch a random quote from the API
-  const response = await fetch("https://api.imgflip.com/get_memes");
-  const data = await response.json();
-  if (response.ok) {
-    // Update array
-    memeList.push(data);
-    memeListLength = memeList[0].data.memes.length + 1;
-  } else {
-    quote.textContent = "An error occured";
-    console.log(data);
-  }
-}
-
-// fetchQuoteList();
-fetchMemeList();
-
-
-=======
->>>>>>> parent of 58d98d1 (update with async fetch functions)
 //memebutton
 memeButton.addEventListener("click", function(){
     document.querySelector('section').appendChild(text);
