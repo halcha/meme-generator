@@ -11,6 +11,7 @@ const quotesList = [];
 var memeListLength, quoteListLength, randomMeme, randomQuote, textNode, quotesObject;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //fetch Quotes
 
 async function fetchQuoteList() {
@@ -47,6 +48,8 @@ async function fetchMemeList() {
 fetchMemeList();
 
 
+=======
+>>>>>>> parent of 58d98d1 (update with async fetch functions)
 =======
 >>>>>>> parent of 58d98d1 (update with async fetch functions)
 //memebutton
@@ -100,6 +103,22 @@ request.onload = function () {
     errorMessage.textContent = 'Error, unable to access API. Error: ' + request.status;
     content.appendChild(errorMessage);
   }
+<<<<<<< HEAD
+}
+request.send();
+
+//get data for quotes
+// Store the element with the class 'content' as a variable for later use
+//let content = document.querySelector('.content');
+
+// Create new request for data and store as variable
+var requestQuotes = new XMLHttpRequest();
+
+// Open a connection to the API endpoint,
+//  passing in the arguments: (HTTP METHOD, URL ENDPOINT)
+requestQuotes.open('GET', 'http://api.quotable.io/quotes?tags=inspirational&limit=75');
+
+=======
 }
 request.send();
 
@@ -133,10 +152,35 @@ requestQuotes.onload = function () {
   }
 }
 requestQuotes.send();
+>>>>>>> parent of 58d98d1 (update with async fetch functions)
+
+// When the URL loads
+requestQuotes.onload = function () {
+
+<<<<<<< HEAD
+  // Parse the response from the API as JSON data and store in a variable
+  let dataQuotes = JSON.parse(this.response);
+
+  // Check the status codes to see if the requestQuotes was successful
+  if (requestQuotes.status >= 200 && requestQuotes.status < 400) {
+    quotesList.push(dataQuotes);
+    quoteListLength = quotesList[0].results.length + 1;
+  } else {
+    // Handle error if API reqest is not successful
+    let errorMessage = document.createElement('p');
+    errorMessage.textContent = 'Error, unable to access API. Error: ' + requestQuotes.status;
+    content.appendChild(errorMessage);
+  }
+}
+requestQuotes.send();
 
 
 //test fetch function
 
+=======
+//test fetch function
+
+>>>>>>> parent of 58d98d1 (update with async fetch functions)
 async function updateQuote() {
   // Fetch a random quote from the Quotable API
   const response = await fetch("https://api.quotable.io/random");
