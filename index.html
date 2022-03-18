@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <title>Meme Generator</title>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <meta name="description" content="Memes" />
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <link rel="icon" href="dogeicon.png">
+
+</head>
+
+<body>
+
+    <div id="loader"></div>
+    <button id="meme-btn">Meme Plz</button>
+    <section id="meme-container"></section>
+    <!-- fade-in loader script -->
+    <script type="text/javascript">
+
+    window.onload = function(){
+
+    setTimeout(function(){
+
+        document.getElementById("loader").remove();
+
+    },1000);
+
+    };
+
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
