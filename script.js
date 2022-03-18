@@ -12,6 +12,7 @@ var memeListLength, quoteListLength, randomMeme, randomQuote, textNode, quotesOb
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 //fetch Quotes
 
 async function fetchQuoteList() {
@@ -48,6 +49,8 @@ async function fetchMemeList() {
 fetchMemeList();
 
 
+=======
+>>>>>>> parent of 58d98d1 (update with async fetch functions)
 =======
 >>>>>>> parent of 58d98d1 (update with async fetch functions)
 =======
@@ -104,6 +107,9 @@ request.onload = function () {
     content.appendChild(errorMessage);
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 58d98d1 (update with async fetch functions)
 }
 request.send();
 
@@ -118,6 +124,7 @@ var requestQuotes = new XMLHttpRequest();
 //  passing in the arguments: (HTTP METHOD, URL ENDPOINT)
 requestQuotes.open('GET', 'http://api.quotable.io/quotes?tags=inspirational&limit=75');
 
+<<<<<<< HEAD
 =======
 }
 request.send();
@@ -153,11 +160,16 @@ requestQuotes.onload = function () {
 }
 requestQuotes.send();
 >>>>>>> parent of 58d98d1 (update with async fetch functions)
+=======
+>>>>>>> parent of 58d98d1 (update with async fetch functions)
 
 // When the URL loads
 requestQuotes.onload = function () {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 58d98d1 (update with async fetch functions)
   // Parse the response from the API as JSON data and store in a variable
   let dataQuotes = JSON.parse(this.response);
 
@@ -173,10 +185,18 @@ requestQuotes.onload = function () {
   }
 }
 requestQuotes.send();
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 58d98d1 (update with async fetch functions)
 
 //test fetch function
 
+<<<<<<< HEAD
+=======
+//test fetch function
+
+>>>>>>> parent of 58d98d1 (update with async fetch functions)
 =======
 //test fetch function
 
