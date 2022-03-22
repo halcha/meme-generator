@@ -1,5 +1,3 @@
-
-
 //variables
 const memeButton = document.getElementById("meme-btn");
 const testButton = document.getElementById("test-btn");
@@ -45,12 +43,12 @@ async function fetchMemeList() {
 fetchQuoteList();
 fetchMemeList();
 // generate meme
-function generateMeme(){
+function generateMeme() {
   document.querySelector('section').appendChild(text);
   var label = document.querySelector('section > p');
   while (label.hasChildNodes()) {
-      label.removeChild(label.firstChild);
-    };
+    label.removeChild(label.firstChild);
+  };
   let randomInt = Math.floor(Math.random() * memeListLength);
   randomMeme = memeList[0].data.memes[randomInt];
   let randomIntQuote = Math.floor(Math.random() * quoteListLength);
@@ -66,4 +64,3 @@ function generateMeme(){
 
 //memebutton
 memeButton.addEventListener("click", generateMeme);
-
