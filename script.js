@@ -2,7 +2,32 @@
 const memeButton = document.getElementById("meme-btn");
 const testButton = document.getElementById("test-btn");
 var img = document.createElement("img");
-var text = document.createElement("p");
+var textContainer = document.createElement("div");
+textContainer.style.position = "relative";
+textContainer.style.display = "inline-block";
+
+var textbg = document.createElement("h1");
+textbg.style.position = "absolute";
+textbg.style.top = "10px";
+textbg.style.left = "50%";
+textbg.style.transform = "translateX(-50%)";
+textbg.style.color = "black";
+textbg.style.textAlign = "center";
+textbg.style.width = "100%";
+textbg.style.fontFamily = "Impact";
+// textbg.style.textShadow = "2px 2px 0 #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff";
+
+var textfg = document.createElement("h1");
+textfg.style.position = "absolute";
+textfg.style.top = "10px";
+textfg.style.left = "50%";
+textfg.style.transform = "translateX(-50%)";
+textfg.style.color = "white";
+textfg.style.textAlign = "center";
+textfg.style.width = "100%";
+textfg.style.fontFamily = "Impact";
+
+
 
 const memeList = [];
 const quotesList = [];
@@ -49,23 +74,34 @@ async function fetchMemeList() {
 fetchMemeList();
 // generate meme
 function generateMeme() {
-  document.querySelector('section').appendChild(text);
-  var label = document.querySelector('section > p');
-  while (label.hasChildNodes()) {
-    label.removeChild(label.firstChild);
-  };
+  // Clear previous content
+  var section = document.querySelector('section');
+  section.innerHTML = '';
+  
+  // Generate new content
   let randomInt = Math.floor(Math.random() * memeListLength);
   randomMeme = memeList[0].data.memes[randomInt];
   let randomIntQuote = Math.floor(Math.random() * ronSwansonQuotes.length);
   randomQuote = ronSwansonQuotes[randomIntQuote];
-  console.log("a meme!");
-  console.log(ronSwansonQuotes[5]);
-  console.log(randomMeme.name);
-  console.log(randomQuote);
+  
+  // Set up the container and image
+  textContainer.appendChild(img);
+  textContainer.appendChild(textbg);
+  textContainer.appendChild(textfg);
+  
+  // Set the image source
   img.src = randomMeme.url;
-  var textNode = document.createTextNode(randomQuote);
-  text.appendChild(textNode);
-  document.querySelector('section').appendChild(img);
+  
+  // Create and append text nodes
+  var textNodeBg = document.createTextNode(randomQuote);
+  var textNodeFg = document.createTextNode(randomQuote);
+  textbg.textContent = ''; // Clear previous text
+  textfg.textContent = ''; // Clear previous text
+  textbg.appendChild(textNodeBg);
+  textfg.appendChild(textNodeFg);
+  
+  // Add everything to the section
+  section.appendChild(textContainer);
 }
 
 //memebutton
