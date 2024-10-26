@@ -1,30 +1,27 @@
 //variables
 const memeButton = document.getElementById("meme-btn");
 const testButton = document.getElementById("test-btn");
+
 var img = document.createElement("img");
+img.style.maxWidth = "100%";
+img.style.maxHeight = "750px"; 
+
 var textContainer = document.createElement("div");
 textContainer.style.position = "relative";
 textContainer.style.display = "inline-block";
 
+/* style source: https://www.fabiofranchino.com/blog/how-to-make-a-meme-like-text-style-in-html-and-css/ */
+
 var textbg = document.createElement("h1");
-textbg.style.position = "absolute";
-textbg.style.top = "10px";
-textbg.style.left = "50%";
-textbg.style.transform = "translateX(-50%)";
-textbg.style.color = "black";
-textbg.style.textAlign = "center";
-textbg.style.width = "100%";
 textbg.style.fontFamily = "Impact";
-// textbg.style.textShadow = "2px 2px 0 #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff";
+textbg.style.webkitTextStroke = "7px black";
+textbg.style.color = "white";
+
 
 var textfg = document.createElement("h1");
 textfg.style.position = "absolute";
-textfg.style.top = "10px";
-textfg.style.left = "50%";
-textfg.style.transform = "translateX(-50%)";
+textfg.style.top= "0";
 textfg.style.color = "white";
-textfg.style.textAlign = "center";
-textfg.style.width = "100%";
 textfg.style.fontFamily = "Impact";
 
 
@@ -85,9 +82,9 @@ function generateMeme() {
   randomQuote = ronSwansonQuotes[randomIntQuote];
   
   // Set up the container and image
-  textContainer.appendChild(img);
   textContainer.appendChild(textbg);
   textContainer.appendChild(textfg);
+  textContainer.appendChild(img);
   
   // Set the image source
   img.src = randomMeme.url;
